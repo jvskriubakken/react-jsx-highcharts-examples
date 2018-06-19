@@ -19,6 +19,7 @@ const plotOptions = {
 class App extends Component {
 
   render() {
+      const kmph = 80;
     return (
       <div className="App">
         <header className="App-header">
@@ -60,7 +61,7 @@ class App extends Component {
                   <YAxis.Title y={-110}>Speed</YAxis.Title>
                   <SolidGaugeSeries
                       name='Speed'
-                      data={[ this.state.kmph ]}
+                      data={[ kmph ]}
                       dataLabels={{
                           format: '<div style="text-align:center"><span style="font-size:25px;color:black">{y}</span><br/><span style="font-size:12px;color:silver">km/h</span></div>',
                           y: -50
