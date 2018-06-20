@@ -6,6 +6,13 @@ import {
     HighchartsChart, withHighcharts, XAxis, YAxis, Pane, SolidGaugeSeries
 } from 'react-jsx-highcharts';
 
+import addHighchartsMore from 'highcharts/highcharts-more';
+import addSolidGaugeModule from 'highcharts/modules/solid-gauge';
+
+// Apply addtional modules
+addHighchartsMore(Highcharts);
+addSolidGaugeModule(Highcharts);
+
 const plotOptions = {
     solidgauge: {
         dataLabels: {
@@ -33,8 +40,8 @@ class App extends Component {
               <Pane
                   center={['50%', '85%']}
                   size='100%'
-                  startAngle={-90}
-                  endAngle={90}
+                  startAngle={-150}
+                  endAngle={150}
                   background={{
                       backgroundColor: '#EEE',
                       innerRadius: '60%',
@@ -48,10 +55,10 @@ class App extends Component {
                       [0.5,  '#DDDF0D'],
                       [0.9, '#DF5353']
                   ]}
-                  lineWidth={0}
+                  lineWidth={1}
                   minorTickInterval={null}
-                  tickPixelInterval={400}
-                  tickWidth={0}
+                  tickPixelInterval={10}
+                  tickWidth={2}
                   labels={{
                       y: 16,
                       style: { display: 'none' }
